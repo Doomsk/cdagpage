@@ -53,3 +53,8 @@ ul {
     margin-top: 100px;
     padding: 20px;
 }
+
+.logo {
+    display: inline-block;
+    margin-left: 350px;
+}
