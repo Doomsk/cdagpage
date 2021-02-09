@@ -41,11 +41,11 @@ When placed as a object, it must come after either **with** or **if** statement.
 
 ```
 subj: action [with subj2: action [obj] & with subj3: action [obj]]
-			action [obj & with subj2: action [obj] & obj obj]
+      action [obj & with subj2: action [obj] & obj obj]
 where
 subj2: action [obj]
 where
-	subj3: action [obj]
+subj3: action [obj]
 ```
 
 ### action
@@ -54,8 +54,8 @@ Action is the link between the subject and the object by some specific means. So
 
 ```
 subj: action [obj]
-		  action & action [obj]
-		  action [with subj2: action [obj] action [obj]]
+      action & action [obj]
+      action [with subj2: action [obj] action [obj]]
 where
 subj2: action [obj]
 ```
@@ -88,10 +88,10 @@ Loop is a simple code  **_n...m**  placed after a wildcard variable, defined aft
 
 ```
 subj: action [obj$k]_n...m
-			action [obj$k]_n...m as attr$k_n...m
-		  action [with subj2: action [obj$k]_n...m]
-			action [$k]_n...m%j
-		  checks [(obj$k > obj|)_n...m]
+      action [obj$k]_n...m as attr$k_n...m
+      action [with subj2: action [obj$k]_n...m]
+      action [$k]_n...m%j
+      checks [(obj$k > obj|)_n...m]
 ```
 
 The first value, **n** is the first item of the iteration, while **m** is the last. They can be applied to objects, attributes, objects inside objects and logical statements. In case of simple iteration with integers, it can be set as the examples: **_1...4** or **_5...40**. When the iterable is an array, it is defined as **_attr...** to go through all the values. The ***** can also be used on integers when the final value is not necessarily known. The **%** sign is the mod operation, where values will range from **n** to **m** and only be applicable when the value is divisible by **j**.
@@ -102,7 +102,7 @@ Logical operators are only available with **checks** action and they must be con
 
 ```
 subj: checks [(3 > 2) & (1 = 1) | ((3%2 = 0) & (4 - $k = 0&)_1...4)] as attr
-			action [if attr: action [obj] else action [obj]]
+      action [if attr: action [obj] else action [obj]]
 ```
 
 Operations available are:
@@ -142,16 +142,16 @@ Naming attributes has a convention to facilitate readability and translation. It
 
 ```
 subj: action [obj] as v1
-			action [obj] as v2
-			action [obj] as v3
+      action [obj] as v2
+      action [obj] as v3
 ```
 
 Naming loop variables is more flexible, since it will not be carried outside the scope of the loop. The only limitations, that is applied to every other naming entity, is:
 
 - Not start with:
-    - "[]&$:!<>=~|_.-+«»„“「」『』（）, digits or other punctuations
+    - "\[\]&$:!<>=~\|_.-+«»„“「」『』（）, digits or other punctuations
 - Not end with:
-    - :&$|!<>=~.+[]()_"«»„“「」『』（）and other punctuations
+    - :&$\|!<>=~.+\[\]\(\)_"«»„“「」『』（）and other punctuations
 - Starting with ***** will indicate external attribute
 - Ending with anything above will result in an interpretation of a new entity: string if double quotes, entity's entity if dot, loop variable if dollar symbol and so on.
 - Except the cited above, any other Unicode character may be used for attributes, subjects and loop variables (but do keep in mind the common good practices for your chosen language).
