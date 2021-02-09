@@ -8,15 +8,15 @@ C† is a Heisenberg-based hybrid **full-stack quantum programming language** cr
 
 The lower level language referred as **C†.low** or **C†.pulse** is the algorithm as a set of pulses to be sent to real quantum computer hardware or as a QASM algorithm for simulated quantum computers. Its main focus is to send the complex algorithm request as a simple sequence of pulses or gates to the quantum computer so it can be manipulated properly. Because it has no real interaction with the quantum computer, we call it **Heisenberg-based language** — only the gates sequence matters and then we collect the result by collapsing everything on the **measurement operator.**
 
-The mid level language referred as **C†.mid,** **C†.gpp** or **C†.assembly** is a higher abstraction of code, **not** containing any direct **reference to quantum gates** or quantum properties. It is mostly intended to pave a way between a higher level language (such as C, C++, Python, Julia, JavaScript, Rust, Erlang, Lua, C†, etc.) and the C†.pulse.
+The mid level language referred as **C†.mid,** **C†.gpp** or simply **C†** is a higher abstraction of code, **not** containing any direct **reference to quantum gates** or quantum properties. It is mostly intended to pave a way between a higher level language (such as C, C++, Python, Julia, JavaScript, Rust, Erlang, Lua, C†, etc.) and the C†.pulse.
 
-It aims to **translate** function and class requests into set of **pulse instructions** based on the desired algorithm. Its second goal is to provide the right interpretation for each kind of algorithm. For this purpose, it calls an external language with high performance for data manipulation and analysis, such as **Julia**, to perform all the analysis on the sets of bit sequences from the measurements to give them the expected meaning, so **C†.assembly** can return a valid result for the high level language requester.
+It aims to **translate** function and class requests into set of **pulse instructions** based on the desired algorithm. Its second goal is to provide the right interpretation for each kind of algorithm. For this purpose, it calls an external language with high performance for data manipulation and analysis, such as **Julia**, to perform all the analysis on the sets of bit sequences from the measurements to give them the expected meaning, so **C†** can return a valid result for the high level language requester.
 
 The high level language referred as **C†.high** is a completely abstract high level language the same way as high level languages are today. It connects the developer to the power of quantum computers through its familiar behavior from **functional** and **object-oriented languages** and connectivity to lower levels of C†.
 
-In this documentation we will present the **C†.assembly** (from now on referred as **GPP**).
+In this documentation we will present the **C†**.
 
-# **C†.assembly (GPP)**
+# **C†**
 
 ## Syntax
 
@@ -28,11 +28,11 @@ Subject must be a string not starting with special characters nor being one of t
 
 ```
 subj: action [obj]
-action [with subj2: action [obj]]
+      action [with subj2: action [obj]]
 where
 subj2: action [obj]
-action [with subj3: action [obj]]
-action [obj]
+       action [with subj3: action [obj]]
+       action [obj]
 where
 subj3: action [obj]
 ```
