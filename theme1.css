@@ -42,10 +42,10 @@ ul {
     align-items: center;
 }
 
-img {
+/*img {
     width: auto;
     height: 30vh;
-}
+}*/
 
 .main-text {
   font-size: 2.1rem;
@@ -63,7 +63,7 @@ img {
 .page-wrap {
     flex: 1 0 auto;
     /* equal to footer height */
-    margin-top: 100px;
+    margin-top: 2vh;
     padding: 20px;
 }
 
@@ -71,6 +71,11 @@ img {
     display: inline-block;
     align-items: center;
     margin-left: 350px;
+}
+
+.fa:hover {
+    text-decoration: none;
+    opacity: 0.7;
 }
 
 .fa {
