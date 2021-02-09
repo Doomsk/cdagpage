@@ -28,11 +28,11 @@ Subject must be a string not starting with special characters nor being one of t
 
 ```
 subj: action [obj]
-			action [with subj2: action [obj]]
+action [with subj2: action [obj]]
 where
 subj2: action [obj]
-			 action [with subj3: action [obj]]
-			 action [obj]
+action [with subj3: action [obj]]
+action [obj]
 where
 subj3: action [obj]
 ```

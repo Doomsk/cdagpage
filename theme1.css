@@ -56,5 +56,6 @@ ul {
 
 .logo {
     display: inline-block;
+    align-items: center;
     margin-left: 350px;
 }
