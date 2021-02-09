@@ -27,11 +27,24 @@ html, body {
     text-align: center;
 }
 
+.flex-item2 {
+    padding: 5px;
+    width: auto;
+    height: auto;
+    margin-top: 10px;
+    text-align: right;
+}
+
 ul {
     list-style: none;
     display: flex;
     margin-top: 10px;
     align-items: center;
+}
+
+img {
+    width: auto;
+    height: 30vh;
 }
 
 .main-text {
@@ -58,4 +71,21 @@ ul {
     display: inline-block;
     align-items: center;
     margin-left: 350px;
+}
+
+.fa {
+  padding: 2px;
+  text-decoration: none;
+  border-radius: 20%;
+}
+
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-github {
+  background: #343434;;
+  color: white;
 }
