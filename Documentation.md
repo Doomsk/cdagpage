@@ -72,7 +72,7 @@ Attribute is referred as a variable in other languages. To assign a value to a a
 subj: action [obj] as attr
 ```
 
-The syntax **<before> as attr** literally means **attr = <before>** in other languages. There may be one or more attributes, as the example:
+The syntax **(before) as attr** literally means **attr = (before)** in other languages. There may be one or more attributes, as the example:
 
 ```
 subj: action [obj1 obj2] as attr1 attr2
@@ -87,21 +87,21 @@ When a subject complement receives an external attribute, it is defined as **att
 Loop is a simple code  **_n...m**  placed after a wildcard variable, defined after the 'dollar' symbol **$**. In the definition, **n** and **m** can be integer or a set of data (array, string, etc). The clear example is as follows:
 
 ```
-subj: action [obj**$**k]_n...m
-			action [obj**$**k]_n...m as attr**$**k_n...m
-		  action [with subj2: action [obj**$**k]_n...m]
-			action [**$**k]_n...m%j
-		  **checks** [(obj**$**k > obj|)_n...m]
+subj: action [obj$k]_n...m
+			action [obj$k]_n...m as attr$k_n...m
+		  action [with subj2: action [obj$k]_n...m]
+			action [$k]_n...m%j
+		  checks [(obj$k > obj|)_n...m]
 ```
 
-The first value, **n** is the first item of the iteration, while **m** is the last. They can be applied to objects, attributes, objects inside objects and logical statements. In case of simple iteration with integers, it can be set as the examples: **_1...4** or **_5...40**. When the iterable is an array, it is defined as **_attr...*** to go through all the values. The ***** can also be used on integers when the final value is not necessarily known. The **%** sign is the mod operation, where values will range from **n** to **m** and only be applicable when the value is divisible by **j**.
+The first value, **n** is the first item of the iteration, while **m** is the last. They can be applied to objects, attributes, objects inside objects and logical statements. In case of simple iteration with integers, it can be set as the examples: **_1...4** or **_5...40**. When the iterable is an array, it is defined as **_attr...** to go through all the values. The ***** can also be used on integers when the final value is not necessarily known. The **%** sign is the mod operation, where values will range from **n** to **m** and only be applicable when the value is divisible by **j**.
 
 ### logical operators
 
 Logical operators are only available with **checks** action and they must be contained in between parenthesis, as follows:
 
 ```
-subj: **checks** [(3 > 2) & (1 = 1) | ((3%2 = 0) & (4 - **$**k = 0&)_1...4)] as attr
+subj: checks [(3 > 2) & (1 = 1) | ((3%2 = 0) & (4 - $k = 0&)_1...4)] as attr
 			action [if attr: action [obj] else action [obj]]
 ```
 
