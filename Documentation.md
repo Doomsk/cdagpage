@@ -1,20 +1,18 @@
 # Documentation
 
----
-
 # Intro
 
-C† is a Heisenberg-based hybrid **full-stack quantum programming language** created to help developers to transition to quantum algorithms **without having to learn quantum mechanics** or quantum physics properties in order to take advantage of its power.
+C† is a Heisenberg-based hybrid **full-stack quantum programming language** created to help developers transition to quantum algorithms **without having to learn quantum mechanics** or quantum physics properties in order to take advantage of its power.
 
-The lower level language referred as **C†.low** or **C†.pulse** is the algorithm as a set of pulses to be sent to real quantum computer hardware or as a QASM algorithm for simulated quantum computers. Its main focus is to send the complex algorithm request as a simple sequence of pulses or gates to the quantum computer so it can be manipulated properly. Because it has no real interaction with the quantum computer, we call it **Heisenberg-based language** — only the gates sequence matters and then we collect the result by collapsing everything on the **measurement operator.**
+The lower level language referred to as **C†.low** or **C†.pulse** is an algorithm as a set of pulses to be sent to real quantum computer hardware or as a QASM algorithm for simulated quantum computers. Its main focus is to send the complex algorithmic request as a simple sequence of pulses or gates to the quantum computer so it can be manipulated properly. Because it has no real interaction with the quantum computer, we call it **Heisenberg-based language** — only the gate sequence matters since we collect the result by collapsing everything on the **measurement operator.**
 
-The mid level language referred as **C†.mid,** **C†.gpp** or simply **C†** is a higher abstraction of code, **not** containing any direct **reference to quantum gates** or quantum properties. It is mostly intended to pave a way between a higher level language (such as C, C++, Python, Julia, JavaScript, Rust, Erlang, Lua, C†, etc.) and the C†.pulse.
+The mid level language referred to as **C†.mid,** **C†.gpp** or simply as **C†**, is a higher abstraction of code that **does not** contain any direct **reference to quantum gates** or quantum properties. It is mostly intended as a link between a higher level language (such as C, C++, Python, Julia, JavaScript, Rust, Erlang, Lua, C†, etc.) and the C†.pulse.
 
-It aims to **translate** function and class requests into set of **pulse instructions** based on the desired algorithm. Its second goal is to provide the right interpretation for each kind of algorithm. For this purpose, it calls an external language with high performance for data manipulation and analysis, such as **Julia**, to perform all the analysis on the sets of bit sequences from the measurements to give them the expected meaning, so **C†** can return a valid result for the high level language requester.
+The main goal is to **translate** function and class requests into sets of **pulse instructions** based on the desired algorithm. Its secondary goal is to provide an accurate interpretation for each kind of algorithm. For this purpose, it calls an external language with high performance for data manipulation and analysis, such as **Julia**, to perform actions on bit sequence sets originated from the measurements to assign them the expected meaning, and by doing so **C†** can return a valid result for the high level language requester.
 
-The high level language referred as **C†.high** is a completely abstract high level language the same way as high level languages are today. It connects the developer to the power of quantum computers through its familiar behavior from **functional** and **object-oriented languages** and connectivity to lower levels of C†.
+The high level language referred to as **C†.high** is a completely abstract language like most high level languages are today. It connects the developer to the power of quantum computers while maintaining the familiar behavior of **functional** and **object-oriented languages** and providing the connection to lower levels of C†.
 
-In this documentation we will present the **C†**.
+In this document we will present and detail the **C†** language.
 
 # **C†**
 
