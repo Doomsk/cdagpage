@@ -1,2 +1,5 @@
 
 *.zip
+
+**/.DS_STORE
+# another option is \.DS_STORE
